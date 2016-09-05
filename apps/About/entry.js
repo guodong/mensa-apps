@@ -24,7 +24,8 @@ Libmensa.createWindow({
     width: '500px',
     left: '400px',
     top: '100px'
-  }
+  },
+  
 }, function(window) {
   window.show();
   window.on('destroy', function() {

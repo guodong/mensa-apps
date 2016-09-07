@@ -126,15 +126,6 @@
           var window = Libmensa.findWindowByWid(wid);
           if (window)
             window.show();
-          // Owdapp.showWindow(opts, function() {
-          //   /* send event window show ready to inform server send key frame */
-          //
-          //   var buf = new ArrayBuffer(5);
-          //   var dv = new DataView(buf);
-          //   dv.setUint8(0, 14, true);
-          //   dv.setUint32(1, cews_dv.getUint32(2, true), true);
-          //   //self.event_channel.send(buf);
-          // });
 
           break;
         case Cip.EVENT.CIP_EVENT_WINDOW_HIDE:
@@ -236,7 +227,7 @@
     });
   }
   Libmensa.ajax({
-    url: 'http://localhost:3000/instances',
+    url: 'http://apiv2.cloudwarehub.com/instances',
     method: 'POST',
     data: {
       data: {
@@ -244,9 +235,9 @@
 
         },
         relationships: {
-          deployment: {
+          version: {
             data: {
-              type: 'deployments',
+              type: 'versions',
               id: '22d4c995-6cbb-4f48-b4e7-3a345b5e1b6e'
             }
           }

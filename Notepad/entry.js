@@ -10,6 +10,7 @@
       CIP_EVENT_WINDOW_HIDE: 3,
       CIP_EVENT_WINDOW_CONFIGURE: 4,
       CIP_EVENT_WINDOW_FRAME: 15,
+      CIP_EVENT_EXIT: 16
     }
   };
 
@@ -188,6 +189,9 @@
           };
           decoder.decode(new Uint8Array(opts.nal));
 
+          break;
+        case Cip.EVENT.CIP_EVENT_EXIT:
+          Libmensa.exit();
           break;
         default:
           break;
